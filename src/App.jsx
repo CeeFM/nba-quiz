@@ -5,7 +5,6 @@ import './App.css'
 import { getAllPlayers } from './services/playerService'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [players, setPlayers] = useState([])
 
   useEffect(() => {
@@ -17,9 +16,10 @@ function App() {
 
   return (
     <>
-    {players.map((baller) => {
-       <p>baller?.name</p>
-    })}
+    <p>hello</p>
+    {players.map((nba) => 
+      <div>{nba?.name}</div>
+    )}
     </>
   )
 }
