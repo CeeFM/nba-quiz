@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { getAllPlayers } from './services/playerService'
+import { getAllPlayers, getPlayerGames } from './services/playerService'
 
 function App() {
   const [players, setPlayers] = useState([])
@@ -23,7 +23,11 @@ function App() {
     }
     setSelectedPlayers(somePlayers);
     let anotherRanNum = Math.floor(Math.random() * 4)
-    setAnswer(somePlayers[anotherRanNum]);
+    getPlayerGames(somePlayers[anotherRanNum]?.id)
+      .then((playerStats) => {
+        let finalRanNum = Math.floor((Math.random() * playerStats.length))
+        setAnswer(playerStats[finalRanNum]);
+      })
   }
 
 
@@ -32,6 +36,9 @@ function App() {
       setPlayers(playerArray);
       pickRandomPlayers(playerArray);
     })
+    .then(() => {
+      getPlayerGames
+    })
   }, []);
 
 
@@ -39,7 +46,8 @@ function App() {
     <>
     <div>RIDDLE ME THIS, BALLER</div>
 
-    <div>{answer?.name}</div>
+    <div>Which player scored {answer?.points} points for the {answer?.teamName}?</div>
+    <div>HINT: Their player ID is {answer?.playerId}</div>
     {selectedPlayers.map((nba) => 
       <button id={'player-' + nba?.id}>{nba?.name}</button>
     )}
