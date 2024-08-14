@@ -8,6 +8,7 @@ function App() {
   const [players, setPlayers] = useState([])
   const [selectedPlayers, setSelectedPlayers] = useState([])
   const [answer, setAnswer] = useState({})
+  const [thisRandomStat, setThisRandomStat] = useState("")
 
   const pickRandomPlayers = (playerArray) => {
     let somePlayers = [];
@@ -43,14 +44,13 @@ function App() {
     }
   }
 
-
   useEffect(() => {
     getAllPlayers().then((playerArray) => {
       setPlayers(playerArray);
       pickRandomPlayers(playerArray);
-    })
-    .then(() => {
-      getPlayerGames
+      let stats = ["points", "rebounds", "assists", "blocks", "steals", "threes"]
+      let statIndex = Math.floor(Math.random() * stats.length)
+      setThisRandomStat(stats[statIndex]);
     })
   }, []);
 
