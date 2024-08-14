@@ -30,6 +30,19 @@ function App() {
       })
   }
 
+  const chooseAnswer = (userAnswer, correctAnswer) => {
+    if (userAnswer == correctAnswer) {
+      window.alert("That's correct!")
+      console.log(userAnswer)
+      console.log(correctAnswer)
+    }
+    else {
+      window.alert("Nope! Guess again!")
+      console.log(userAnswer)
+      console.log(correctAnswer)
+    }
+  }
+
 
   useEffect(() => {
     getAllPlayers().then((playerArray) => {
@@ -49,7 +62,7 @@ function App() {
     <div>Which player scored {answer?.points} points for the {answer?.teamName}?</div>
     <div>HINT: Their player ID is {answer?.playerId}</div>
     {selectedPlayers.map((nba) => 
-      <button id={'player-' + nba?.id}>{nba?.name}</button>
+      <button id={'player-' + nba?.id} onClick={() => chooseAnswer(nba?.id, answer?.playerId)}>{nba?.name}</button>
     )}
     </>
   )
