@@ -46,7 +46,6 @@ function App() {
 
   useEffect(() => {
     getAllPlayers().then((playerArray) => {
-      setPlayers(playerArray);
       pickRandomPlayers(playerArray);
       let stats = ["points", "rebounds", "assists", "blocks", "steals", "threes"]
       let statIndex = Math.floor(Math.random() * stats.length)
@@ -59,7 +58,7 @@ function App() {
     <>
     <div>RIDDLE ME THIS, BALLER</div>
 
-    <div>Which player scored {answer?.points} points for the {answer?.teamName}?</div>
+    <div>Which player racked up {answer?.[thisRandomStat]} {thisRandomStat} for the {answer?.teamName}?</div>
     {selectedPlayers.map((nba) => 
       <button id={'player-' + nba?.id} onClick={() => chooseAnswer(nba?.id, answer?.playerId)}>{nba?.name}</button>
     )}
