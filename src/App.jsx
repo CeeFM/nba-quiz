@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { getAllPlayers, getPlayerGames } from './services/playerService'
+import { getAllPlayers, getPlayerGames } from './services/services'
 
 function App() {
   const [players, setPlayers] = useState([])
@@ -62,9 +62,9 @@ function App() {
 
   return (
     <>
-    <div>RIDDLE ME THIS, BALLER</div>
-
-    <div>Which player racked up {answer?.[thisRandomStat]} {thisRandomStat} for the {answer?.teamName}?</div>
+    <h4>RIDDLE ME THIS, BALLER</h4>
+    <br/>
+      <div>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong> for the <strong>{answer?.teamName}?</strong></div>
     {selectedPlayers.map((nba) => 
       <button id={'player-' + nba?.id} onClick={() => chooseAnswer(nba?.id, answer?.playerId)}>{nba?.name}</button>
     )}
