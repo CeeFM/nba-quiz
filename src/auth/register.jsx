@@ -23,7 +23,17 @@ export const Register = (props) => {
         })
             .then(res => res.json())
             .then(createdUser => {
+                if (createdUser.hasOwnProperty("id")) {
+                    localStorage.setItem("bball_user", JSON.stringify({
+                        id: createdUser.id,
+                        right: 0,
+                        wrong: 0,
+                        username: customer.username,
+                        teamName: customer.teamName,
+                        fullName: customer.fullName
+                    }))
                     navigate("/")
+                }
             })
     }
 

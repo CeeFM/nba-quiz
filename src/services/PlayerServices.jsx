@@ -1,3 +1,6 @@
+const localBballUser = localStorage.getItem("bball_user")
+const bballUserObject = JSON.parse(localBballUser)
+
 export const getAllPlayers = () => {
     return fetch(`http://localhost:8088/players`).then((res) => res.json());
 };
@@ -8,21 +11,21 @@ export const getPlayerGames = (playerId) => {
 
 
 export const addRight = (id) => {
-    fetch(`http://localhost:8088/users/${parseInt(id)}`, {
+    fetch(`http://localhost:8088/users/${id}`, {
         method: 'PATCH',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({
-            right: right + 1
+            right: bballUserObject.right + 1
                 })
     })
 }
 
 export const addWrong = (id) => {
-    fetch(`http://localhost:8088/users/${parseInt(id)}`, {
+    fetch(`http://localhost:8088/users/${id}`, {
         method: 'PATCH',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({
-            wrong: wrong + 1
+            wrong: bballUserObject.wrong + 1
         })
     })
 }

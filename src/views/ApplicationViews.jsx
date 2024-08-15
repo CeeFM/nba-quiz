@@ -46,14 +46,13 @@ function ApplicationViews() {
 
     const chooseAnswer = (userAnswer, correctAnswer) => {
         if (userAnswer == correctAnswer) {
-            window.alert("That's correct!")
-            addRight(bballUserObject?.id)
-            window.location.reload()
+            window.alert("That's correct!");
+            addRight(bballUserObject?.id);
 
         }
         else {
-            window.alert("Nope! Guess again!")
-            addWrong(bballUserObject?.id)
+            window.alert("Nope! Guess again!");
+            addWrong(bballUserObject?.id);
         }
     }
 
@@ -72,6 +71,8 @@ function ApplicationViews() {
             {selectedPlayers.map((nba) =>
                 <button id={'player-' + nba?.id} onClick={() => chooseAnswer(nba?.id, answer?.playerId)}>{nba?.name}</button>
             )}
+
+            <button onClick={() => console.log(bballUserObject?.id)}>TEST LOGIN ID</button>
         </>
     )
 }

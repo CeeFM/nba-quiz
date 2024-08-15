@@ -16,6 +16,11 @@ export const Login = () => {
                     const user = foundUsers[0]
                     localStorage.setItem("bball_user", JSON.stringify({
                         id: user.id,
+                        right: user.right,
+                        wrong: user.wrong,
+                        username: user.username,
+                        teamName: user.teamName,
+                        fullName: user.fullName
                     }))
 
                     navigate("/")
