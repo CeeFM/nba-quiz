@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
+import "../App.css"
 
 export const Register = (props) => {
     const [customer, setCustomer] = useState({
@@ -59,7 +59,7 @@ export const Register = (props) => {
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
                 <img className="login-img" src="https://media.tenor.com/fgJoyGz2O6EAAAAC/kevin-durant-come-here.gif" />
-                <h1 className="h3 mb-3 font-weight-normal">Please Register If You Wanna BALL OUT</h1>
+                <h1 className="h3 mb-3 font-weight-normal">READY TO GET DUNKED ON? QUIZ STYLE????</h1>
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateCustomer}

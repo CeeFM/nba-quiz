@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
 
 export const Login = () => {
-    const [email, set] = useState("absoluteNOOB@basketball.basketball")
+    const [email, set] = useState("")
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -31,7 +30,7 @@ export const Login = () => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1 className="title">PLAYOFF BASKETBALL SLOT MACHINE</h1>
+                    <h1 className="title">NBA QUIZ aka POP A SHOT</h1>
                     <img className="login-img" src="https://media.tenor.com/X-p0PE-nVscAAAAd/seattle-supersonics-shawn-kemp.gif" />
                     <h2>Please sign in</h2>
                     <fieldset className="login-form">

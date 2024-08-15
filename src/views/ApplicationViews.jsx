@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import './App.css'
-import { getAllPlayers, getPlayerGames } from './services/services'
+import { getAllPlayers, getPlayerGames } from '../services/PlayerServices'
 
-function App() {
+
+function ApplicationViews() {
     const [players, setPlayers] = useState([])
     const [selectedPlayers, setSelectedPlayers] = useState([])
     const [answer, setAnswer] = useState({})
@@ -69,4 +69,4 @@ function App() {
     )
 }
 
-export default App
+export default ApplicationViews
