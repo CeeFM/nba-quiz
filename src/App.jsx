@@ -26,30 +26,36 @@ function App() {
     let anotherRanNum = Math.floor(Math.random() * 4)
     getPlayerGames(somePlayers[anotherRanNum]?.id)
       .then((playerStats) => {
+        let stats = ["points", "rebounds", "assists", "blocks", "steals", "threes"]
+        let statIndex = Math.floor(Math.random() * stats.length)
+        setThisRandomStat(stats[statIndex]);
         let finalRanNum = Math.floor((Math.random() * playerStats.length))
-        setAnswer(playerStats[finalRanNum]);
+        let statCheck = false;
+        while (!statCheck) {
+          if (playerStats[finalRanNum]?.[thisRandomStat] == 0 | playerStats[finalRanNum]?.[thisRandomStat] == "None")
+          {
+            finalRanNum = Math.floor(Math.random() * playerStats.length)
+          }
+          else {
+            setAnswer(playerStats[finalRanNum]);
+            statCheck = true;
+          }
+        }
       })
   }
 
   const chooseAnswer = (userAnswer, correctAnswer) => {
     if (userAnswer == correctAnswer) {
       window.alert("That's correct!")
-      console.log(userAnswer)
-      console.log(correctAnswer)
     }
     else {
       window.alert("Nope! Guess again!")
-      console.log(userAnswer)
-      console.log(correctAnswer)
     }
   }
 
   useEffect(() => {
     getAllPlayers().then((playerArray) => {
       pickRandomPlayers(playerArray);
-      let stats = ["points", "rebounds", "assists", "blocks", "steals", "threes"]
-      let statIndex = Math.floor(Math.random() * stats.length)
-      setThisRandomStat(stats[statIndex]);
     })
   }, []);
 
