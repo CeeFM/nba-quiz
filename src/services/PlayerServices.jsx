@@ -7,13 +7,22 @@ export const getPlayerGames = (playerId) => {
 };
 
 
-const printId = (id) => {
-    fetch(`http://localhost:8088/userTeam/${parseInt(id)}`, {
+export const addRight = (id) => {
+    fetch(`http://localhost:8088/users/${parseInt(id)}`, {
         method: 'PATCH',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({
-            playerId: randomNumber(),
-            swap: true
+            right: right + 1
+                })
+    })
+}
+
+export const addWrong = (id) => {
+    fetch(`http://localhost:8088/users/${parseInt(id)}`, {
+        method: 'PATCH',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({
+            wrong: wrong + 1
         })
     })
 }

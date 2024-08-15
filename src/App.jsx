@@ -6,6 +6,7 @@ import { Login } from './auth/login'
 import { Register } from './auth/register'
 import { Authorized } from './views/Authorized'
 import ApplicationViews from './views/ApplicationViews'
+import { NavBar } from './views/NavBar'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <Route index path="*" element={
       <Authorized>
         <>
+        <NavBar />
           <ApplicationViews />
         </>
       </Authorized>

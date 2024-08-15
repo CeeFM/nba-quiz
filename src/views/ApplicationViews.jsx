@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getAllPlayers, getPlayerGames } from '../services/PlayerServices'
+import { addRight, addWrong, getAllPlayers, getPlayerGames } from '../services/PlayerServices'
 
 
 function ApplicationViews() {
@@ -7,6 +7,9 @@ function ApplicationViews() {
     const [selectedPlayers, setSelectedPlayers] = useState([])
     const [answer, setAnswer] = useState({})
     const [thisRandomStat, setThisRandomStat] = useState("")
+
+    const localBballUser = localStorage.getItem("bball_user")
+    const bballUserObject = JSON.parse(localBballUser)
 
     const pickRandomPlayers = (playerArray) => {
         let somePlayers = [];
@@ -44,9 +47,13 @@ function ApplicationViews() {
     const chooseAnswer = (userAnswer, correctAnswer) => {
         if (userAnswer == correctAnswer) {
             window.alert("That's correct!")
+            addRight(bballUserObject?.id)
+            window.location.reload()
+
         }
         else {
             window.alert("Nope! Guess again!")
+            addWrong(bballUserObject?.id)
         }
     }
 

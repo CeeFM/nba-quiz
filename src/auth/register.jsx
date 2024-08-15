@@ -6,8 +6,8 @@ export const Register = (props) => {
     const [customer, setCustomer] = useState({
         email: "",
         fullName: "",
-        wins: 0,
-        losses: 0,
+        right: 0,
+        wrong: 0,
         username: "",
         teamName: ""
     })
@@ -23,13 +23,7 @@ export const Register = (props) => {
         })
             .then(res => res.json())
             .then(createdUser => {
-                if (createdUser.hasOwnProperty("id")) {
-                    localStorage.setItem("bball_user", JSON.stringify({
-                        id: createdUser.id,
-                    }))
-
                     navigate("/")
-                }
             })
     }
 
