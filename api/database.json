@@ -79642,15 +79642,15 @@
       "email": "freakinbasketballguy@basketball.basketball",
       "username": "freakinbasketballguy",
       "teamName": "freakin basketball guy",
-      "wins": 0,
-      "losses": 0
+      "right": 0,
+      "wrong": 0
     },
     {
       "id": "ebd8",
       "email": "TEST@TEST.COM",
       "fullName": "TEST",
-      "wins": 0,
-      "losses": 0,
+      "right": 0,
+      "wrong": 0,
       "username": "TEST",
       "teamName": "TESTINGTON"
     }
