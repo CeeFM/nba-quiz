@@ -79637,40 +79637,13 @@
   ],
   "users": [
     {
-      "id": "1",
-      "name": "Freakin Basketball Guy or Something",
-      "email": "freakinbasketballguy@basketball.basketball",
-      "username": "freakinbasketballguy",
-      "teamName": "freakin basketball guy",
-      "right": 0,
-      "wrong": 0
-    },
-    {
-      "id": "ebd8",
-      "email": "TEST@TEST.COM",
-      "fullName": "TEST",
+      "id": "b659",
+      "email": "ok@ok.com",
+      "fullName": "ok",
       "right": 0,
       "wrong": 0,
-      "username": "TEST",
-      "teamName": "TESTINGTON"
-    },
-    {
-      "id": "9407",
-      "email": "another@gmail.com",
-      "fullName": "Another Test",
-      "right": 0,
-      "wrong": 0,
-      "username": "another",
-      "teamName": "Another Test"
-    },
-    {
-      "id": "d135",
-      "email": "what@what.com",
-      "fullName": "what hapens now",
-      "right": 0,
-      "wrong": 0,
-      "username": "whathapen",
-      "teamName": "what"
+      "username": "ok",
+      "teamName": "ok"
     }
   ]
 }
