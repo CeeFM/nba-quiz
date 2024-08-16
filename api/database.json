@@ -79640,8 +79640,8 @@
       "id": "b659",
       "email": "ok@ok.com",
       "fullName": "ok",
-      "right": 0,
-      "wrong": 0,
+      "right": 7,
+      "wrong": 4,
       "username": "ok",
       "teamName": "ok"
     },
@@ -79649,7 +79649,7 @@
       "id": "5d00",
       "email": "no@no.com",
       "fullName": "no",
-      "right": 1,
+      "right": 2,
       "wrong": 1,
       "username": "no",
       "teamName": "no"

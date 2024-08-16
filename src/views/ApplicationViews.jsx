@@ -8,8 +8,8 @@ function ApplicationViews() {
     const [answer, setAnswer] = useState({})
     const [thisRandomStat, setThisRandomStat] = useState("")
 
-    const localBballUser = localStorage.getItem("bball_user")
-    const bballUserObject = JSON.parse(localBballUser)
+    let localBballUser = localStorage.getItem("bball_user")
+    let bballUserObject = JSON.parse(localBballUser)
 
     const pickRandomPlayers = (playerArray) => {
         let somePlayers = [];
@@ -46,13 +46,33 @@ function ApplicationViews() {
 
     const chooseAnswer = (userAnswer, correctAnswer) => {
         if (userAnswer == correctAnswer) {
+            localStorage.setItem("bball_user", JSON.stringify({
+                id: bballUserObject.id,
+                right: bballUserObject.right + 1,
+                wrong: bballUserObject.wrong,
+                username: bballUserObject.username,
+                teamName: bballUserObject.teamName,
+                fullName: bballUserObject.fullName
+            }))
+            localBballUser = localStorage.getItem("bball_user")
+            bballUserObject = JSON.parse(localBballUser)
             window.alert("That's correct!");
-            addRight(bballUserObject?.id);
+            addRight(bballUserObject?.id, bballUserObject?.right);
 
         }
         else {
+            localStorage.setItem("bball_user", JSON.stringify({
+                id: bballUserObject.id,
+                right: bballUserObject.right,
+                wrong: bballUserObject.wrong + 1,
+                username: bballUserObject.username,
+                teamName: bballUserObject.teamName,
+                fullName: bballUserObject.fullName
+            }))
+            localBballUser = localStorage.getItem("bball_user")
+            bballUserObject = JSON.parse(localBballUser)
             window.alert("Nope! Guess again!");
-            addWrong(bballUserObject?.id);
+            addWrong(bballUserObject?.id, bballUserObject?.wrong);
         }
     }
 
