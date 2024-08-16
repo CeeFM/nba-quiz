@@ -79653,6 +79653,15 @@
       "wrong": 1,
       "username": "no",
       "teamName": "no"
+    },
+    {
+      "id": "d54c",
+      "email": "friday@friday.com",
+      "fullName": "friday",
+      "right": 8,
+      "wrong": 3,
+      "username": "friday",
+      "teamName": "friday"
     }
   ]
 }
