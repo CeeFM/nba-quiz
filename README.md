@@ -1,8 +1,30 @@
-# React + Vite
+# NBA QUIZ POP A SHOT
+Answer questions about real stats by real NBA players, earn points, and get in the game!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
 
-Currently, two official plugins are available:
+To run this application locally, follow these steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
+
+- Node.js & npm installed on your machine
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/CeeFM/nba-quiz.git
+cd nba-quiz
+```
+
+### Back-end Setup
+- enter `npm i json-server`
+
+
+### Front-end Setup
+- install front-end dependencies with `npm install`
+
+## Walkthrough
+Coming soon!
+
+## Video Walkthrough
+Coming soon!
