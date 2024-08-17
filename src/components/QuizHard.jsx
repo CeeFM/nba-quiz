@@ -89,12 +89,17 @@ function QuizHard() {
 
     return (
         <>
-            <h4>RIDDLE ME THIS, BALLER</h4>
-            <br />
-            <div>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong>?</div>
-            {selectedPlayers.map((nba) =>
-                <button id={'player-' + nba?.id} onClick={() => chooseAnswer(nba?.id, answer?.playerId)}>{nba?.name}</button>
-            )}
+            <h2>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong>?</h2>
+            <div style={{ margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
+                {selectedPlayers.map((nba) => (
+                    <div key={nba.id} style={{ width: "45%", marginBottom: "1rem", textAlign: "center" }}>
+                        <button onClick={() => chooseAnswer(nba?.id, answer?.playerId)}><img src={nba?.img} alt={nba?.name + " picture"} style={{ width: "auto", height: "20vh" }} /></button>
+                        <br />
+                        <button id={'player-' + nba?.id} onClick={() => chooseAnswer(nba?.id, answer?.playerId)}>{nba?.name}</button>
+                    </div>
+                ))}
+            </div>
+
         </>
     )
 }
