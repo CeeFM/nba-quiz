@@ -6,6 +6,7 @@ function QuizHard() {
     const [players, setPlayers] = useState([])
     const [selectedPlayers, setSelectedPlayers] = useState([])
     const [answer, setAnswer] = useState({})
+    const [currentScore, setCurrentScore] = useState(0)
     const [thisRandomStat, setThisRandomStat] = useState("")
 
     let localBballUser = localStorage.getItem("bball_user")
@@ -33,7 +34,7 @@ function QuizHard() {
                 let finalRanNum = Math.floor((Math.random() * playerStats.length))
                 let statCheck = false;
                 while (!statCheck) {
-                    if (playerStats[finalRanNum]?.[thisRandomStat] == 0 | playerStats[finalRanNum]?.[thisRandomStat] === "None") {
+                    if (playerStats[finalRanNum]?.[thisRandomStat] == "0" | playerStats[finalRanNum]?.[thisRandomStat] === "None") {
                         finalRanNum = Math.floor(Math.random() * playerStats.length)
                     }
                     else {
@@ -58,6 +59,7 @@ function QuizHard() {
             bballUserObject = JSON.parse(localBballUser)
             window.alert("That's correct!");
             addRight(bballUserObject?.id, bballUserObject?.right);
+            setCurrentScore(currentScore + 1);
             getAllPlayers().then((playerArray) => {
                 pickRandomPlayers(playerArray);
             })
@@ -76,7 +78,7 @@ function QuizHard() {
             bballUserObject = JSON.parse(localBballUser)
             window.alert("Nope! Guess again!");
             addWrong(bballUserObject?.id, bballUserObject?.wrong);
-            
+            setCurrentScore(currentScore - 1)
         }
     }
 
@@ -89,7 +91,10 @@ function QuizHard() {
 
     return (
         <>
-            <h2>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong>?</h2>
+        <h2>Your current score: {currentScore}</h2>
+        <h4>Your lifetime score: {bballUserObject?.right - bballUserObject?.wrong} (Right answers: {bballUserObject?.right}, Wrong answers: {bballUserObject?.wrong})</h4>
+        <br />
+            <h1>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong>?</h1>
             <div style={{ margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                 {selectedPlayers.map((nba) => (
                     <div key={nba.id} style={{ width: "45%", marginBottom: "1rem", textAlign: "center" }}>
