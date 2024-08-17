@@ -6,7 +6,8 @@ function ApplicationViews() {
 
     return (
         <>
-        <Quiz />
+        <a href="/easyquiz"><button>Easy</button></a>
+        <a href="/hardquiz"><button>Hard</button></a>
         </>
     )
 }
