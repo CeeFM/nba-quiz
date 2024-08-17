@@ -33,7 +33,7 @@ function QuizHard() {
                 let finalRanNum = Math.floor((Math.random() * playerStats.length))
                 let statCheck = false;
                 while (!statCheck) {
-                    if (playerStats[finalRanNum]?.[thisRandomStat] == 0 | playerStats[finalRanNum]?.[thisRandomStat] == "None") {
+                    if (playerStats[finalRanNum]?.[thisRandomStat] == 0 | playerStats[finalRanNum]?.[thisRandomStat] === "None") {
                         finalRanNum = Math.floor(Math.random() * playerStats.length)
                     }
                     else {
