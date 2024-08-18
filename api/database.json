@@ -79662,6 +79662,15 @@
       "wrong": 3,
       "username": "friday",
       "teamName": "friday"
+    },
+    {
+      "id": "8c19",
+      "email": "god@god.com",
+      "fullName": "god",
+      "right": 14,
+      "wrong": 1,
+      "username": "god",
+      "teamName": "god"
     }
   ]
 }

@@ -94,7 +94,7 @@ function Quiz() {
             <h2>{bballUserObject?.username}'s current score: {currentScore}</h2>
             <h4>{bballUserObject?.username}'s lifetime score: {bballUserObject?.right - bballUserObject?.wrong} (Right answers: {bballUserObject?.right}, Wrong answers: {bballUserObject?.wrong})</h4>
             <br />
-            <h1>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong> for the {nba?.teamName}?</h1>
+            <h1>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong> for the {answer?.teamName}?</h1>
             <div style={{ margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                 {selectedPlayers.map((nba) => (
                     <div key={nba.id} style={{ width: "45%", marginBottom: "1rem", textAlign: "center" }}>
