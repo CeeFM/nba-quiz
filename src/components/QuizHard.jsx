@@ -57,7 +57,7 @@ function QuizHard() {
             }))
             localBballUser = localStorage.getItem("bball_user")
             bballUserObject = JSON.parse(localBballUser)
-            window.alert("That's correct!");
+            window.alert(`That's correct!`);
             addRight(bballUserObject?.id, bballUserObject?.right);
             setCurrentScore(currentScore + 1);
             getAllPlayers().then((playerArray) => {
@@ -91,8 +91,8 @@ function QuizHard() {
 
     return (
         <>
-        <h2>Your current score: {currentScore}</h2>
-        <h4>Your lifetime score: {bballUserObject?.right - bballUserObject?.wrong} (Right answers: {bballUserObject?.right}, Wrong answers: {bballUserObject?.wrong})</h4>
+            <h2>{bballUserObject?.username}'s current score: {currentScore}</h2>
+            <h4>{bballUserObject?.username}'s lifetime score: {bballUserObject?.right - bballUserObject?.wrong} (Right answers: {bballUserObject?.right}, Wrong answers: {bballUserObject?.wrong})</h4>
         <br />
             <h1>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong>?</h1>
             <div style={{ margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
