@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 export const NavBar = () => {
     const navigate = useNavigate()
 
-    return <ul className="navbar" style={{listStyleType: "none", marginTop: "-5vh", marginBottom: "20vh"}}>
+    return <ul className="navbar" style={{listStyleType: "none", margin: "-2vh 0 10vh 0"}}>
         {
             localStorage.getItem("bball_user")
                 ?

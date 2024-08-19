@@ -63,7 +63,7 @@
     {
       "id": "11",
       "name": "Arvydas Sabonis",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Sabonis_Lipofsky_%281_of_1%29.JPG",
+      "img": "https://basketnews.com/image-124468-any718x552.jpg",
       "externalAPIId": 949
     },
     {
@@ -99,7 +99,7 @@
     {
       "id": "17",
       "name": "Bill Laimbeer",
-      "img": "https://scontent-iad3-1.xx.fbcdn.net/v/t1.6435-9/186515281_3055978114682375_4045739126378502035_n.jpg?stp=dst-jpg_s720x720&_nc_cat=107&ccb=1-7&_nc_sid=0bb214&_nc_ohc=Idoq4Rc01acAX_ijrps&_nc_ht=scontent-iad3-1.xx&oh=00_AfBeuMBNYB7tC8RvLfVznH8RrjDOtl2i-jyx3JNxedxsnA&oe=657F62A0",
+      "img": "https://cdn.nba.com/manage/2021/08/bill-laimbeer-iso-looks.jpg",
       "externalAPIId": 533
     },
     {
@@ -135,7 +135,7 @@
     {
       "id": "23",
       "name": "Bob Love",
-      "img": "https://history.bulls.com/wp-content/uploads/2015/10/Topps-Bob-Love-1971-72-564x800.jpg",
+      "img": "https://cdn.nba.com/teams/legacy/www.nba.com/bulls/sites/bulls/files/bob-love-speaking-from-the-heart.jpg",
       "externalAPIId": 46403308
     },
     {
@@ -429,7 +429,7 @@
     {
       "id": "72",
       "name": "Derrick McKey",
-      "img": "https://i.ebayimg.com/images/g/19YAAOSwvaRlMXAz/s-l1600.jpg",
+      "img": "https://ashof.org/wp-content/uploads/2019/07/derrick-mckey.jpg",
       "externalAPIId": 2967
     },
     {
@@ -441,7 +441,7 @@
     {
       "id": "74",
       "name": "Detlef Schrempf",
-      "img": "https://i.ebayimg.com/images/g/DS4AAOSwUN5lTbcc/s-l1600.jpg",
+      "img": "https://cdn.vox-cdn.com/thumbor/d_1mXiqz_Zr_knhCOQHFRuRykp0=/0x0:399x266/1200x800/filters:focal(0x0:399x266)/cdn.vox-cdn.com/uploads/chorus_image/image/24986127/detlef_schrempf.0.jpg",
       "externalAPIId": 2882
     },
     {
@@ -1113,7 +1113,7 @@
     {
       "id": "187",
       "name": "Wilt Chamberlain",
-      "img": "https://upload.wikimedia.org/wikipedia/en/9/93/Wilt_Chamberlain_100-point.jpg",
+      "img": "https://cdn.nba.com/manage/2020/10/chamberlain-dunk-scaled-e1629733536536-1568x883.jpg",
       "externalAPIId": 46398155
     }
   ],
@@ -79667,8 +79667,8 @@
       "id": "8c19",
       "email": "god@god.com",
       "fullName": "god",
-      "right": 14,
-      "wrong": 1,
+      "right": 33,
+      "wrong": 19,
       "username": "god",
       "teamName": "god"
     }
