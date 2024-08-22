@@ -32,16 +32,8 @@ function Quiz() {
                 let statIndex = Math.floor(Math.random() * stats.length)
                 setThisRandomStat(stats[statIndex]);
                 let finalRanNum = Math.floor((Math.random() * playerStats.length))
-                let statCheck = false;
-                while (!statCheck) {
-                    if (playerStats[finalRanNum]?.[thisRandomStat] == "0" | playerStats[finalRanNum]?.[thisRandomStat] === "None") {
-                        finalRanNum = Math.floor(Math.random() * playerStats.length)
-                    }
-                    else {
-                        setAnswer(playerStats[finalRanNum]);
-                        statCheck = true;
-                    }
-                }
+                setAnswer(playerStats[finalRanNum]);
+
             })
     }
 
