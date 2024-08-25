@@ -79640,8 +79640,8 @@
       "id": "b659",
       "email": "ok@ok.com",
       "fullName": "ok",
-      "right": 108,
-      "wrong": 98,
+      "right": 139,
+      "wrong": 112,
       "username": "ok",
       "teamName": "ok"
     },
@@ -79667,8 +79667,8 @@
       "id": "8c19",
       "email": "god@god.com",
       "fullName": "god",
-      "right": 36,
-      "wrong": 23,
+      "right": 47,
+      "wrong": 42,
       "username": "god",
       "teamName": "god"
     }

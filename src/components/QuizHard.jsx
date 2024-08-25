@@ -68,15 +68,20 @@ function QuizHard() {
             }))
             localBballUser = localStorage.getItem("bball_user")
             bballUserObject = JSON.parse(localBballUser)
-            window.alert("Nope! Guess again!");
+            let answerName = players.find((name) => name.id == correctAnswer)
+            window.alert("Nope! YOU BORKED IT, NEGATIVE POINTS" + ` ${answerName.name} did it, you dummy`);
             addWrong(bballUserObject?.id, bballUserObject?.wrong);
             setCurrentScore(currentScore - 1)
+            getAllPlayers().then((playerArray) => {
+                pickRandomPlayers(playerArray);
+            })
         }
     }
 
     useEffect(() => {
         getAllPlayers().then((playerArray) => {
             pickRandomPlayers(playerArray);
+            setPlayers(playerArray);
         })
     }, []);
 
