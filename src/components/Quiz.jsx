@@ -8,6 +8,7 @@ function Quiz() {
     const [answer, setAnswer] = useState({})
     const [currentScore, setCurrentScore] = useState(0)
     const [thisRandomStat, setThisRandomStat] = useState("")
+    const [anotherRandomStat, setAnotherRandomStat] = useState("")
 
     let localBballUser = localStorage.getItem("bball_user")
     let bballUserObject = JSON.parse(localBballUser)
@@ -31,6 +32,11 @@ function Quiz() {
                 let stats = ["points", "rebounds", "assists", "blocks", "steals", "threes"]
                 let statIndex = Math.floor(Math.random() * stats.length)
                 setThisRandomStat(stats[statIndex]);
+                let secondstatIndex = Math.floor(Math.random() * stats.length)
+                if (statIndex == secondstatIndex) {
+                    secondstatIndex = Math.floor(Math.random() * stat.length)
+                }
+                setAnotherRandomStat(stats[secondstatIndex]);
                 let finalRanNum = Math.floor((Math.random() * playerStats.length))
                 setAnswer(playerStats[finalRanNum]);
 
@@ -86,7 +92,7 @@ function Quiz() {
 
     return (
         <>
-            <h1>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong> for the {answer?.teamName}?</h1>
+            <h1>Which player racked up <strong>{answer?.[thisRandomStat]} {thisRandomStat}</strong> and <strong>{answer?.[anotherRandomStat]} {anotherRandomStat}</strong>  for the {answer?.teamName}?</h1>
             <div style={{ margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                 {selectedPlayers.map((nba) => (
                     <div key={nba.id} style={{ width: "45%", marginBottom: "1rem", textAlign: "center" }}>
