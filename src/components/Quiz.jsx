@@ -74,7 +74,7 @@ function Quiz() {
             }))
             localBballUser = localStorage.getItem("bball_user")
             bballUserObject = JSON.parse(localBballUser)
-            window.alert("Nope! YOU BORKED IT, NEGATIVE POINTS");
+            window.alert("Nope! YOU BORKED IT, NEGATIVE POINTS" + ` ${answerName.name} did it, you dummy`);
             addWrong(bballUserObject?.id, bballUserObject?.wrong);
             setCurrentScore(currentScore - 1)
             getAllPlayers().then((playerArray) => {
