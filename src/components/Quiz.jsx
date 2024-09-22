@@ -34,7 +34,7 @@ function Quiz() {
                 setThisRandomStat(stats[statIndex]);
                 let secondstatIndex = Math.floor(Math.random() * stats.length)
                 if (statIndex == secondstatIndex) {
-                    secondstatIndex = Math.floor(Math.random() * stat.length)
+                    secondstatIndex = Math.floor(Math.random() * stats.length)
                 }
                 setAnotherRandomStat(stats[secondstatIndex]);
                 let finalRanNum = Math.floor((Math.random() * playerStats.length))
@@ -74,8 +74,9 @@ function Quiz() {
             }))
             localBballUser = localStorage.getItem("bball_user")
             bballUserObject = JSON.parse(localBballUser)
-            window.alert("Nope! YOU BORKED IT, NEGATIVE POINTS" + ` ${answerName.name} did it, you dummy`);
-            addWrong(bballUserObject?.id, bballUserObject?.wrong);
+            let answerName = players.find((name) => name.id == correctAnswer)
+            window.alert("Nope! YOU BORKED IT, NEGATIVE POINTS" + ` ${answerName?.name} did it, you dummy`);
+                addWrong(bballUserObject?.id, bballUserObject?.wrong);
             setCurrentScore(currentScore - 1)
             getAllPlayers().then((playerArray) => {
                 pickRandomPlayers(playerArray);
@@ -86,6 +87,7 @@ function Quiz() {
     useEffect(() => {
         getAllPlayers().then((playerArray) => {
             pickRandomPlayers(playerArray);
+            setPlayers(playerArray);
         })
     }, []);
 

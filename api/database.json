@@ -79667,10 +79667,19 @@
       "id": "8c19",
       "email": "god@god.com",
       "fullName": "god",
-      "right": 56,
-      "wrong": 49,
+      "right": 63,
+      "wrong": 54,
       "username": "god",
       "teamName": "god"
+    },
+    {
+      "id": "b1f1",
+      "email": "freakazoid@me.com",
+      "fullName": "Freakazoid",
+      "right": 6,
+      "wrong": 0,
+      "username": "freakazoid",
+      "teamName": "Freakazoids"
     }
   ]
 }
